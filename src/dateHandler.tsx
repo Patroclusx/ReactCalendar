@@ -1,7 +1,7 @@
-export const selectedDates = [];
-export const allDatesSelected = [];
-export const holidayDates = [];
-export const holidayNames = [];
+export const selectedDates : Date[] = [];
+export const allDatesSelected : Date[] = [];
+export const holidayDates : Date[] = [];
+export const holidayNames : String[] = [];
 const ukHolidayAPI = 'https://www.gov.uk/bank-holidays.json';
 
 //Fetch JSON from Holidays API
@@ -10,7 +10,7 @@ fetch(ukHolidayAPI)
     .then(data => fetchUKHolidaysDates(data));
 
 //Turn Holidays JSON into array of Date objects
-export const fetchUKHolidaysDates = (data) => {
+export const fetchUKHolidaysDates = (data: { [x: string]: { events: any; }; }) => {
     holidayDates.length = 0;
 
     /* Possible holidays to fetch:
@@ -18,7 +18,7 @@ export const fetchUKHolidaysDates = (data) => {
     */
     let england = data["england-and-wales"].events;
 
-    const englandArray = england.map((items) => {
+    const englandArray = england.map((items: { title: String; date: { split: (arg0: string) => [any, any, any]; }; }) => {
         holidayNames.push(items.title);
         const [year, month, date] = items.date.split("-"); 
         return new Date(year, month-1, date);
@@ -28,12 +28,12 @@ export const fetchUKHolidaysDates = (data) => {
 }
 
 //Checks if given date is in given array
-export const isInArray = (array, value) => {
+export const isInArray = (array: any[], value: Date) => {
     return array.length > 0 && !!array.find(item => {return item.getTime() === value.getTime()});
 }
 
 //Get index of date in given array
-export const getIndexOfDate = (array, value) => {
+export const getIndexOfDate = (array: any[], value: Date) => {
     const date = array.find(item => {return item.getTime() === value.getTime()});
     if(date !== undefined)
         return array.indexOf(date);
@@ -66,7 +66,7 @@ export const selectAllDatesInbetween = () => {
 * 'dateB' is optional in case only one date is to be selected
 * Returns array of selected dates if successful
 */
-export const manualDateSelector = (dateA, dateB) => {
+export const manualDateSelector = (dateA: Date | null, dateB: Date | null) => {
     selectedDates.length = 0;
     allDatesSelected.length = 0;
 
