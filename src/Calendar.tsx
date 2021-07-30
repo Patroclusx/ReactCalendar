@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import * as date from "./dateHandler";
+import * as date from "./jsx/dateHandler";
 import * as React from "react";
 
 const currentDate = new Date();

@@ -1,4 +1,4 @@
-import {manualDateSelector} from './dateHandler';
+import {manualDateSelector} from '../jsx/dateHandler';
 
 test('Returns an array with one Date object from one given date point', () => {
     const singleDatePoint = new Date(2021, 6, 12); // Mon 12/Jul/2021

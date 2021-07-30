@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import * as React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Calendar from './Calendar';
