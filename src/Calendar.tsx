@@ -12,31 +12,31 @@ export default function Calendar () {
 
     return (
         <div className="App">
-        <div className="container">
-        <div className="calendar">
+            <div className="container">
+                <div className="calendar">
 
-        <div className="month">
-        <i className="fas fa-angle-left prev"></i>
-            <div className="date">
-        {/* eslint-disable-next-line */}
-        <h1></h1>
-        <p></p>
-        </div>
-        <i className="fas fa-angle-right next"></i>
-        </div>
+                <div className="month">
+                    <i className="fas fa-angle-left prev"></i>
+                <div className="date">
+                    {/* eslint-disable-next-line */}
+                    <h1></h1>
+                    <p></p>
+                </div>
+                    <i className="fas fa-angle-right next"></i>
+                </div>
 
-        <div className="weekdays">
-        <div>Mon</div>
-        <div>Tue</div>
-        <div>Wed</div>
-        <div>Thu</div>
-        <div>Fri</div>
-        <div>Sat</div>
-        <div className="sun">Sun</div>
-        </div>
-        <div className="days"/>
-        </div>
-        </div>
+                <div className="weekdays">
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    <div className="sun">Sun</div>
+                </div>
+                    <div className="days"/>
+                </div>
+            </div>
         </div>
     );
 }
